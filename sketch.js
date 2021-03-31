@@ -10,6 +10,22 @@ const settings = {
 
 // click canvas and enter cmd + s, it will download the canvas
 const sketch = () => {
+  const createGrid = () => {
+    const points = [];
+    const count = 5;
+    for (let x = 0; x < count; x++) {
+      for (let y = 0; y < count; y++) {
+        const u = x / count;
+        const v = y / count;
+        points.push([u, v]);
+      }
+    }
+    return points;
+  }
+
+  const points = createGrid();
+  console.log(points);
+
   return ({ context, width, height }) => {
     context.fillStyle = "white";
     context.fillRect(0, 0, width, height);
