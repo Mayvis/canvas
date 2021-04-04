@@ -3,7 +3,10 @@ const { lerp } = require("canvas-sketch-util/math");
 const random = require("canvas-sketch-util/random");
 const palettes = require("nice-color-palettes");
 
+random.setSeed(random.getRandomSeed());
+
 const settings = {
+  suffix: random.getSeed(),
   dimensions: [2048, 2048],
   // dimensions: "A4",
   // orientation: "landscape", // landscape, portrait
@@ -11,7 +14,7 @@ const settings = {
   // pixelsPerInch: 300, // default is 72
 };
 
-// click canvas and enter cmd + s, it will download the canvas
+// click canvas and enter cmd + s, it will download the canvas or using cmd + k
 const sketch = () => {
   const colorCount = random.rangeFloor(1, 5);
   const palette = random.shuffle(random.pick(palettes)).slice(0, colorCount);
