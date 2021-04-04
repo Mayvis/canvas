@@ -8,6 +8,7 @@ const settings = {
   animate: true,
   dimensions: [1024, 1280],
   fps: 24,
+  duration: 4,
   // duration: 4,
   // Get a WebGL canvas rather than 2D
   context: "webgl",
